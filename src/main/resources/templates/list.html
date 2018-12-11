@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <ul>
+        <li th:each="entry : ${entries}" th:text="${entry.getMessage()}"> </li>
+    </ul>
+    <a href="/">Dodaj nowy wpis</a>
+</div>
+</body>
+</html>
