@@ -7,9 +7,12 @@
 <body>
     <div style="text-align: center;">
         <h1>Witaj w księdze gości</h1>
+
+        <h2 th:if="${info != null}" th:text="${info}"></h2>
+
         <form action="/" method="post">
-            <input type="text" name="name" placeholder="Imię">
-            <input type="text" name="surname" placeholder="Nazwisko">
+            <input type="text" name="name" placeholder="Imię" required>
+            <input type="text" name="surname" placeholder="Nazwisko" required>
                 <br/>
             <textarea title="Data" name="message"></textarea>
             <input type="submit"  value="Wyślij">

@@ -29,8 +29,16 @@ public class MainController {
     @PostMapping("/")
     public String index(@RequestParam("name") String name,
                         @RequestParam("surname") String surname,
-                        @RequestParam("message") String message){
+                        @RequestParam("message") String message,
+                        Model model){
+        if(name.isEmpty() || surname.isEmpty() || message.isEmpty()) {
+            model.addAttribute("info", "hej hej nie kombinuj tam!");
+            return "index";
+        }
+
+
         entryService.addEntry(new EntryModel(name, surname, message));
+        model.addAttribute("info", "Dodano wpis");
         return "index";
     }
 
