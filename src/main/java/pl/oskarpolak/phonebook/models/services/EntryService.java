@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import pl.oskarpolak.phonebook.models.EntryModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -14,11 +16,11 @@ public class EntryService {
 
     //taka klasa, musi mieć bezargumentowy kostruktor!
     public EntryService() {
-        entries = new ArrayList<>();
+        entries = new LinkedList<>();
     }
 
     public void addEntry(EntryModel entryModel){
-        entries.add(entryModel);
+        entries.add(0, entryModel);
     }
 
     public List<EntryModel> getEntries() {
