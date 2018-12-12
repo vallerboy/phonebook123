@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:insert="/inc/head_fragment :: header"></th:block>
 </head>
 <body>
-    <div style="text-align: center;">
-        <h1>Witaj w księdze gości</h1>
+    <div class="container align-content-center">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Wtaj w księdze gości</h1>
+                <h2 class="lead" th:if="${info != null}" th:text="${info}"></h2>
+            </div>
+        </div>
 
-        <h2 th:if="${info != null}" th:text="${info}"></h2>
 
         <form action="/" method="post">
-            <input type="text" name="name" placeholder="Imię" required>
-            <input type="text" name="surname" placeholder="Nazwisko" required>
+            <input class="form-control" type="text" name="name" placeholder="Imię" required>
+            <input class="form-control" type="text" name="surname" placeholder="Nazwisko" required>
                 <br/>
-            <textarea title="Data" name="message"></textarea>
-            <input type="submit"  value="Wyślij">
+            <textarea class="form-control" title="Data" name="message"></textarea>
+            <input class="btn btn-primary" type="submit"  value="Wyślij">
         </form>
 
         <br/>
 
-        <a href="/list">Lista wszystkich wpisów</a>
+        <a class="btn-primary btn" href="/list">Lista wszystkich wpisów</a>
     </div>
 </body>
 </html>
