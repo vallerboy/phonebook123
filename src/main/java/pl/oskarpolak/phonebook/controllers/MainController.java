@@ -32,13 +32,13 @@ public class MainController {
                         @RequestParam("message") String message,
                         Model model){
         if(name.isEmpty() || surname.isEmpty() || message.isEmpty()) {
-            model.addAttribute("info", "hej hej nie kombinuj tam!");
+            model.addAttribute("error", "hej hej nie kombinuj tam!");
             return "index";
         }
 
 
         entryService.addEntry(new EntryModel(name, surname, message));
-        model.addAttribute("info", "Dodano wpis");
+        model.addAttribute("success", "Dodano wpis");
         return "index";
     }
 

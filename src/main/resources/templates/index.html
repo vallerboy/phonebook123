@@ -8,7 +8,9 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Wtaj w księdze gości</h1>
-                <h2 class="lead" th:if="${info != null}" th:text="${info}"></h2>
+                <h2 th:if="${success != null || error != null}"
+                    th:class="${'alert ' + (success != null ? 'alert-success' : 'alert-danger')}"
+                    th:text="${success != null ? success : error}"></h2>
             </div>
         </div>
 
